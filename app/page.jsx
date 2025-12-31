@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { FEATURES, STEPS, TESTIMONIALS } from "@/lib/landing";
+import { GlowingEffectDemo } from "@/components/glowing-effect-demo";
 
 export default function LandingPage() {
   return (
@@ -123,7 +124,7 @@ export default function LandingPage() {
       </section>
 
       {/* ───── Testimonials ───── */}
-      <section className="bg-gray-50 py-20">
+      <section className="py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <Badge variant="outline" className="bg-green-100 text-green-700">
             Testimonials
