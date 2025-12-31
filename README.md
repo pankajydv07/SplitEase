@@ -10,6 +10,7 @@ A full-stack expense splitting application built with modern web technologies. S
 - 🔐 Secure authentication
 - 📧 Email notifications
 - 🤖 AI-powered expense management
+- ✨ Interactive UI with glowing effect components
 
 ## Tech Stack
 
@@ -79,6 +80,31 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run start` - Start the production server
 - `npm run lint` - Run ESLint
+
+## UI Components
+
+### Glowing Effect Component
+
+An interactive glowing border effect component based on Aceternity UI design patterns. See [docs/GLOWING_EFFECT.md](docs/GLOWING_EFFECT.md) for detailed usage instructions.
+
+**Quick Usage:**
+```jsx
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+
+<div className="relative h-64 rounded-xl border">
+  <GlowingEffect
+    spread={40}
+    glow={true}
+    disabled={false}
+    proximity={64}
+  />
+  <div className="relative p-6">
+    Your content here
+  </div>
+</div>
+```
+
+The demo is integrated into the landing page at the "Beautiful UI Components" section.
 
 ## License
 
