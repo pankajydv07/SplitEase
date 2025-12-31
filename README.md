@@ -1,11 +1,48 @@
-# Full Stack AI Splitwise Clone with Next JS, Convex, Tailwind, Inngest, Shadcn UI Tutorial 🔥🔥
-## https://youtu.be/Ce7O3p7-YDI
+# SplitEase
 
-![splitr](https://github.com/user-attachments/assets/11e138c4-efcf-4a85-8586-f2993da118d8)
+A full-stack expense splitting application built with modern web technologies. SplitEase helps you manage shared expenses with friends, roommates, or groups by tracking who owes what and simplifying settlements.
 
-### Make sure to create a `.env` file with following variables -
+## Features
 
+- 💰 Track shared expenses and split bills
+- 👥 Manage groups and participants
+- 📊 View expense history and analytics
+- 🔐 Secure authentication
+- 📧 Email notifications
+- 🤖 AI-powered expense management
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS, Shadcn UI
+- **Backend**: Convex (real-time database and backend)
+- **Authentication**: Clerk
+- **Email**: Resend
+- **AI**: Google Gemini
+- **Background Jobs**: Inngest
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/pankajydv07/SplitEase.git
+cd SplitEase
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory with the following variables:
+
+```env
 # Deployment used by `npx convex dev`
 CONVEX_DEPLOYMENT=
 
@@ -23,3 +60,26 @@ RESEND_API_KEY=
 
 GEMINI_API_KEY=
 ```
+
+4. Set up Convex:
+```bash
+npx convex dev
+```
+
+5. Run the development server:
+```bash
+npm run dev
+```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Development
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run start` - Start the production server
+- `npm run lint` - Run ESLint
+
+## License
+
+This project is open source and available under the MIT License.
