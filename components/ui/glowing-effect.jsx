@@ -20,6 +20,7 @@ const GlowingEffect = memo(
     const containerRef = useRef(null);
     const lastPosition = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef(0);
+    const animationControlsRef = useRef(null);
 
     const handleMove = useCallback(
       (e) => {
@@ -34,8 +35,8 @@ const GlowingEffect = memo(
           if (!element) return;
 
           const { left, top, width, height } = element.getBoundingClientRect();
-          const mouseX = e?.x ?? lastPosition.current.x;
-          const mouseY = e?.y ?? lastPosition.current.y;
+          const mouseX = e?.clientX ?? lastPosition.current.x;
+          const mouseY = e?.clientY ?? lastPosition.current.y;
 
           if (e) {
             lastPosition.current = { x: mouseX, y: mouseY };
@@ -73,7 +74,13 @@ const GlowingEffect = memo(
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
           const newAngle = currentAngle + angleDiff;
 
-          animate(currentAngle, newAngle, {
+          // Cancel previous animation if it exists
+          if (animationControlsRef.current) {
+            animationControlsRef.current.stop();
+          }
+
+          // Store the animation controls to allow cancellation
+          animationControlsRef.current = animate(currentAngle, newAngle, {
             duration: movementDuration,
             ease: [0.16, 1, 0.3, 1],
             onUpdate: (value) => {
@@ -99,6 +106,9 @@ const GlowingEffect = memo(
       return () => {
         if (animationFrameRef.current) {
           cancelAnimationFrame(animationFrameRef.current);
+        }
+        if (animationControlsRef.current) {
+          animationControlsRef.current.stop();
         }
         window.removeEventListener("scroll", handleScroll);
         document.body.removeEventListener("pointermove", handlePointerMove);

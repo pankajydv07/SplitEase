@@ -124,7 +124,7 @@ export default function LandingPage() {
       </section>
 
       {/* ───── Testimonials ───── */}
-      <section className="py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <Badge variant="outline" className="bg-green-100 text-green-700">
             Testimonials
