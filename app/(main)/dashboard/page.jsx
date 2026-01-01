@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Users, CreditCard, ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -59,7 +60,7 @@ export default function Dashboard() {
 
           {/* Balance overview cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   Total Balance
@@ -87,9 +88,9 @@ export default function Dashboard() {
                       : "All settled up!"}
                 </p>
               </CardContent>
-            </Card>
+            </GlowingCard>
 
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   You are owed
@@ -103,9 +104,9 @@ export default function Dashboard() {
                   From {balances?.oweDetails?.youAreOwedBy?.length || 0} people
                 </p>
               </CardContent>
-            </Card>
+            </GlowingCard>
 
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   You owe
@@ -130,7 +131,7 @@ export default function Dashboard() {
                   </>
                 )}
               </CardContent>
-            </Card>
+            </GlowingCard>
           </div>
 
           {/* Main dashboard content */}
@@ -147,7 +148,7 @@ export default function Dashboard() {
             {/* Right column */}
             <div className="space-y-6">
               {/* Balance details */}
-              <Card>
+              <GlowingCard>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <CardTitle>Balance Details</CardTitle>
@@ -162,10 +163,10 @@ export default function Dashboard() {
                 <CardContent>
                   <BalanceSummary balances={balances} />
                 </CardContent>
-              </Card>
+              </GlowingCard>
 
               {/* Groups */}
-              <Card>
+              <GlowingCard>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <CardTitle>Your Groups</CardTitle>
@@ -188,7 +189,7 @@ export default function Dashboard() {
                     </Link>
                   </Button>
                 </CardFooter>
-              </Card>
+              </GlowingCard>
             </div>
           </div>
         </>

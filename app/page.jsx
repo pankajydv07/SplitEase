@@ -4,9 +4,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import Image from "next/image";
 import { FEATURES, STEPS, TESTIMONIALS } from "@/lib/landing";
-import { GlowingEffectDemo } from "@/components/glowing-effect-demo";
 
 export default function LandingPage() {
   return (
@@ -79,9 +79,11 @@ export default function LandingPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ title, Icon, bg, color, description }) => (
-              <Card
+              <GlowingCard
                 key={title}
                 className="flex flex-col items-center space-y-4 p-6 text-center"
+                glowProximity={80}
+                glowInactiveZone={0.2}
               >
                 <div className={`rounded-full p-3 ${bg}`}>
                   <Icon className={`h-6 w-6 ${color}`} />
@@ -89,7 +91,7 @@ export default function LandingPage() {
 
                 <h3 className="text-xl font-bold">{title}</h3>
                 <p className="text-gray-500">{description}</p>
-              </Card>
+              </GlowingCard>
             ))}
           </div>
         </div>
@@ -135,7 +137,7 @@ export default function LandingPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map(({ quote, name, role, image }) => (
-              <Card key={name} className="flex flex-col justify-between">
+              <GlowingCard key={name} className="flex flex-col justify-between" glowProximity={80}>
                 <CardContent className="space-y-4 p-6">
                   <p className="text-gray-500">{quote}</p>
                   <div className="flex items-center space-x-3">
@@ -152,7 +154,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </GlowingCard>
             ))}
           </div>
         </div>

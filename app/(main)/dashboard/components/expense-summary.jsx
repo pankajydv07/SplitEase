@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import {
   BarChart,
   Bar,
@@ -42,7 +43,7 @@ export function ExpenseSummary({ monthlySpending, totalSpent }) {
   const currentMonth = new Date().getMonth();
 
   return (
-    <Card>
+    <GlowingCard>
       <CardHeader>
         <CardTitle>Expense Summary</CardTitle>
       </CardHeader>
@@ -81,6 +82,6 @@ export function ExpenseSummary({ monthlySpending, totalSpent }) {
           Monthly spending for {currentYear}
         </p>
       </CardContent>
-    </Card>
+    </GlowingCard>
   );
 }
