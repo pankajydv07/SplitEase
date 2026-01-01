@@ -9,6 +9,7 @@ import { BarLoader } from "react-spinners";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlusCircle, ArrowLeftRight, ArrowLeft } from "lucide-react";
 import { ExpenseList } from "@/components/expense-list";
@@ -82,7 +83,7 @@ export default function PersonExpensesPage() {
       </div>
 
       {/* Balance card */}
-      <Card className="mb-6">
+      <GlowingCard className="mb-6">
         <CardHeader className="pb-2">
           <CardTitle className="text-xl">Balance</CardTitle>
         </CardHeader>
@@ -109,7 +110,7 @@ export default function PersonExpensesPage() {
             </div>
           </div>
         </CardContent>
-      </Card>
+      </GlowingCard>
 
       {/* Tabs for expenses and settlements */}
       <Tabs

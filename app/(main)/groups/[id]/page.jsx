@@ -8,6 +8,7 @@ import { useConvexQuery } from "@/hooks/use-convex-query";
 import { BarLoader } from "react-spinners";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlusCircle, ArrowLeftRight, ArrowLeft, Users } from "lucide-react";
 import { ExpenseList } from "@/components/expense-list";
@@ -86,25 +87,25 @@ export default function GroupExpensesPage() {
       {/* Grid layout for group details */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div className="lg:col-span-2">
-          <Card>
+          <GlowingCard>
             <CardHeader className="pb-2">
               <CardTitle className="text-xl">Group Balances</CardTitle>
             </CardHeader>
             <CardContent>
               <GroupBalances balances={balances} />
             </CardContent>
-          </Card>
+          </GlowingCard>
         </div>
 
         <div>
-          <Card>
+          <GlowingCard>
             <CardHeader className="pb-2">
               <CardTitle className="text-xl">Members</CardTitle>
             </CardHeader>
             <CardContent>
               <GroupMembers members={members} />
             </CardContent>
-          </Card>
+          </GlowingCard>
         </div>
       </div>
 
