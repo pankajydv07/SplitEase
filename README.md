@@ -10,7 +10,7 @@ A full-stack expense splitting application built with modern web technologies. S
 - 🔐 Secure authentication
 - 📧 Email notifications
 - 🤖 AI-powered expense management
-- ✨ Interactive UI with glowing effect components
+- ✨ Interactive glowing UI effects across the entire website
 
 ## Tech Stack
 
@@ -83,28 +83,32 @@ npm run dev
 
 ## UI Components
 
-### Glowing Effect Component
+### Glowing Effect
 
-An interactive glowing border effect component based on Aceternity UI design patterns. See [docs/GLOWING_EFFECT.md](docs/GLOWING_EFFECT.md) for detailed usage instructions.
+An interactive glowing border effect is applied to cards across the entire website. The effect follows your mouse cursor, creating an engaging and modern user experience.
+
+**Integrated Throughout:**
+- Dashboard balance and summary cards
+- Landing page feature and testimonial cards  
+- Person detail balance cards
+- Group detail cards
 
 **Quick Usage:**
 ```jsx
-import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { GlowingCard } from "@/components/ui/glowing-card";
+import { CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
-<div className="relative h-64 rounded-xl border">
-  <GlowingEffect
-    spread={40}
-    glow={true}
-    disabled={false}
-    proximity={64}
-  />
-  <div className="relative p-6">
-    Your content here
-  </div>
-</div>
+<GlowingCard>
+  <CardHeader>
+    <CardTitle>Your Title</CardTitle>
+  </CardHeader>
+  <CardContent>
+    Your content
+  </CardContent>
+</GlowingCard>
 ```
 
-The demo is integrated into the landing page at the "Beautiful UI Components" section.
+See [docs/GLOWING_EFFECT.md](docs/GLOWING_EFFECT.md) for detailed usage instructions and customization options.
 
 ## License
 
