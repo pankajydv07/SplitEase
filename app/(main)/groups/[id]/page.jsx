@@ -7,6 +7,7 @@ import { api } from "@/convex/_generated/api";
 import { useConvexQuery } from "@/hooks/use-convex-query";
 import { BarLoader } from "react-spinners";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -68,18 +69,18 @@ export default function GroupExpensesPage() {
           </div>
 
           <div className="flex gap-2">
-            <Button asChild variant="outline">
+            <GlowingButton asChild variant="outline">
               <Link href={`/settlements/group/${params.id}`}>
                 <ArrowLeftRight className="mr-2 h-4 w-4" />
                 Settle up
               </Link>
-            </Button>
-            <Button asChild>
+            </GlowingButton>
+            <GlowingButton asChild>
               <Link href={`/expenses/new`}>
                 <PlusCircle className="mr-2 h-4 w-4" />
                 Add expense
               </Link>
-            </Button>
+            </GlowingButton>
           </div>
         </div>
       </div>
