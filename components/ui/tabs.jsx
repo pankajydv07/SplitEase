@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 import { cn } from "@/lib/utils"
 
@@ -19,16 +20,32 @@ function Tabs({
 
 function TabsList({
   className,
+  enableGlow = true,
   ...props
 }) {
   return (
     (<TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]",
+        "bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px] relative",
         className
       )}
-      {...props} />)
+      {...props}>
+      {enableGlow && (
+        <GlowingEffect
+          spread={30}
+          glow={true}
+          disabled={false}
+          proximity={50}
+          inactiveZone={0.15}
+          borderWidth={1.5}
+          movementDuration={1.8}
+        />
+      )}
+      <div className="relative z-10 inline-flex h-full w-full items-center justify-center gap-[3px]">
+        {props.children}
+      </div>
+    </TabsPrimitive.List>)
   );
 }
 

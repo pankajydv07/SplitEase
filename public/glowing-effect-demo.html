@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Effect Component - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glow {
+            border-radius: inherit;
+        }
+        .glow::after {
+            content: "";
+            border-radius: inherit;
+            position: absolute;
+            inset: calc(-1 * var(--glowingeffect-border-width));
+            border: var(--glowingeffect-border-width) solid transparent;
+            background: var(--gradient);
+            background-attachment: fixed;
+            opacity: var(--active);
+            transition: opacity 300ms;
+            mask-clip: padding-box, border-box;
+            mask-composite: intersect;
+            mask-image: linear-gradient(#0000, #0000), conic-gradient(from calc((var(--start) - var(--spread)) * 1deg), #00000000 0deg, #fff, #00000000 calc(var(--spread) * 2deg));
+            -webkit-mask-clip: padding-box, border-box;
+            -webkit-mask-composite: source-in;
+            -webkit-mask-image: linear-gradient(#0000, #0000), conic-gradient(from calc((var(--start) - var(--spread)) * 1deg), #00000000 0deg, #fff, #00000000 calc(var(--spread) * 2deg));
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+    <div class="container mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold mb-4">Glowing Effect Demo</h1>
+            <p class="text-gray-600">
+                Hover over the cards to see the glowing effect in action
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+                Note: This is a standalone HTML demo. The full React component is integrated in the main application.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="glowing-card min-h-[14rem]">
+                <div class="relative h-full rounded-[1.25rem] border border-gray-300 p-2">
+                    <div class="glowing-effect-container pointer-events-none absolute inset-0 rounded-[inherit] opacity-100 transition-opacity"
+                         style="--blur: 0px; --spread: 40; --start: 0; --active: 0; --glowingeffect-border-width: 3px; --repeating-conic-gradient-times: 5; --gradient: radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%), radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%), radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%), repeating-conic-gradient(from 236.84deg at 50% 50%, #dd7bbb 0%, #d79f1e calc(25% / var(--repeating-conic-gradient-times)), #5a922c calc(50% / var(--repeating-conic-gradient-times)), #4c7894 calc(75% / var(--repeating-conic-gradient-times)), #dd7bbb calc(100% / var(--repeating-conic-gradient-times)));">
+                        <div class="glow"></div>
+                    </div>
+                    <div class="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="relative flex flex-1 flex-col justify-between gap-3">
+                            <div class="w-fit rounded-lg border border-gray-300 bg-gray-100 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><line x1="12" y1="22" x2="12" y2="12"></line></svg>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="pt-0.5 text-xl font-semibold tracking-tight">
+                                    Beautiful Interactive Cards
+                                </h3>
+                                <p class="text-sm text-gray-600">
+                                    Hover over this card to see the glowing effect in action.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glowing-card min-h-[14rem]">
+                <div class="relative h-full rounded-[1.25rem] border border-gray-300 p-2">
+                    <div class="glowing-effect-container pointer-events-none absolute inset-0 rounded-[inherit] opacity-100 transition-opacity"
+                         style="--blur: 0px; --spread: 40; --start: 0; --active: 0; --glowingeffect-border-width: 3px; --repeating-conic-gradient-times: 5; --gradient: radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%), radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%), radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%), repeating-conic-gradient(from 236.84deg at 50% 50%, #dd7bbb 0%, #d79f1e calc(25% / var(--repeating-conic-gradient-times)), #5a922c calc(50% / var(--repeating-conic-gradient-times)), #4c7894 calc(75% / var(--repeating-conic-gradient-times)), #dd7bbb calc(100% / var(--repeating-conic-gradient-times)));">
+                        <div class="glow"></div>
+                    </div>
+                    <div class="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="relative flex flex-1 flex-col justify-between gap-3">
+                            <div class="w-fit rounded-lg border border-gray-300 bg-gray-100 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="pt-0.5 text-xl font-semibold tracking-tight">
+                                    Smooth Animations
+                                </h3>
+                                <p class="text-sm text-gray-600">
+                                    The effect follows your cursor smoothly with optimized performance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glowing-card min-h-[14rem]">
+                <div class="relative h-full rounded-[1.25rem] border border-gray-300 p-2">
+                    <div class="glowing-effect-container pointer-events-none absolute inset-0 rounded-[inherit] opacity-100 transition-opacity"
+                         style="--blur: 0px; --spread: 40; --start: 0; --active: 0; --glowingeffect-border-width: 3px; --repeating-conic-gradient-times: 5; --gradient: radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%), radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%), radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%), repeating-conic-gradient(from 236.84deg at 50% 50%, #dd7bbb 0%, #d79f1e calc(25% / var(--repeating-conic-gradient-times)), #5a922c calc(50% / var(--repeating-conic-gradient-times)), #4c7894 calc(75% / var(--repeating-conic-gradient-times)), #dd7bbb calc(100% / var(--repeating-conic-gradient-times)));">
+                        <div class="glow"></div>
+                    </div>
+                    <div class="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="relative flex flex-1 flex-col justify-between gap-3">
+                            <div class="w-fit rounded-lg border border-gray-300 bg-gray-100 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="pt-0.5 text-xl font-semibold tracking-tight">
+                                    Fully Customizable
+                                </h3>
+                                <p class="text-sm text-gray-600">
+                                    Customize colors, spread, proximity, and more with props.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple vanilla JS implementation of the glowing effect
+        const cards = document.querySelectorAll('.glowing-card');
+        
+        cards.forEach(card => {
+            const container = card.querySelector('.glowing-effect-container');
+            let lastPosition = { x: 0, y: 0 };
+            let animationFrame = null;
+
+            function handleMove(e) {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+
+                animationFrame = requestAnimationFrame(() => {
+                    const rect = container.getBoundingClientRect();
+                    const mouseX = e?.clientX ?? lastPosition.x;
+                    const mouseY = e?.clientY ?? lastPosition.y;
+
+                    if (e) {
+                        lastPosition = { x: mouseX, y: mouseY };
+                    }
+
+                    const center = [rect.left + rect.width * 0.5, rect.top + rect.height * 0.5];
+                    const distanceFromCenter = Math.hypot(mouseX - center[0], mouseY - center[1]);
+                    const inactiveRadius = 0.5 * Math.min(rect.width, rect.height) * 0.01;
+
+                    if (distanceFromCenter < inactiveRadius) {
+                        container.style.setProperty('--active', '0');
+                        return;
+                    }
+
+                    const proximity = 64;
+                    const isActive = 
+                        mouseX > rect.left - proximity &&
+                        mouseX < rect.left + rect.width + proximity &&
+                        mouseY > rect.top - proximity &&
+                        mouseY < rect.top + rect.height + proximity;
+
+                    container.style.setProperty('--active', isActive ? '1' : '0');
+
+                    if (!isActive) return;
+
+                    const currentAngle = parseFloat(container.style.getPropertyValue('--start')) || 0;
+                    const targetAngle = (180 * Math.atan2(mouseY - center[1], mouseX - center[0])) / Math.PI + 90;
+                    const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
+                    const newAngle = currentAngle + angleDiff;
+
+                    // Simplified animation - just set the angle
+                    container.style.setProperty('--start', String(newAngle));
+                });
+            }
+
+            document.addEventListener('pointermove', handleMove);
+            window.addEventListener('scroll', () => handleMove());
+        });
+    </script>
+</body>
+</html>

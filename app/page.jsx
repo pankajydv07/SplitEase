@@ -3,7 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
 import { Card, CardContent } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import Image from "next/image";
 import { FEATURES, STEPS, TESTIMONIALS } from "@/lib/landing";
 
@@ -27,24 +29,24 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row justify-center">
-            <Button
+            <GlowingButton
               asChild
               size="lg"
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
             >
               <Link href="/dashboard">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button
+            </GlowingButton>
+            <GlowingButton
               asChild
               variant="outline"
               size="lg"
-              className="border-green-600 text-green-600 hover:bg-green-50"
+              className="border-green-600 text-green-600 dark:text-green-400 dark:border-green-500 hover:bg-green-50 dark:hover:bg-green-950"
             >
               <Link href="#how-it-works">See How It Works</Link>
-            </Button>
+            </GlowingButton>
           </div>
         </div>
 
@@ -78,9 +80,11 @@ export default function LandingPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ title, Icon, bg, color, description }) => (
-              <Card
+              <GlowingCard
                 key={title}
                 className="flex flex-col items-center space-y-4 p-6 text-center"
+                glowProximity={80}
+                glowInactiveZone={0.2}
               >
                 <div className={`rounded-full p-3 ${bg}`}>
                   <Icon className={`h-6 w-6 ${color}`} />
@@ -88,7 +92,7 @@ export default function LandingPage() {
 
                 <h3 className="text-xl font-bold">{title}</h3>
                 <p className="text-gray-500">{description}</p>
-              </Card>
+              </GlowingCard>
             ))}
           </div>
         </div>
@@ -134,7 +138,7 @@ export default function LandingPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map(({ quote, name, role, image }) => (
-              <Card key={name} className="flex flex-col justify-between">
+              <GlowingCard key={name} className="flex flex-col justify-between" glowProximity={80}>
                 <CardContent className="space-y-4 p-6">
                   <p className="text-gray-500">{quote}</p>
                   <div className="flex items-center space-x-3">
@@ -151,7 +155,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </GlowingCard>
             ))}
           </div>
         </div>

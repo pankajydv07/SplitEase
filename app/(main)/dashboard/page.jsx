@@ -10,7 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { GlowingCard } from "@/components/ui/glowing-card";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
 import { PlusCircle, Users, CreditCard, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { ExpenseSummary } from "./components/expense-summary";
@@ -49,17 +51,17 @@ export default function Dashboard() {
         <>
           <div className="flex  justify-between flex-col sm:flex-row sm:items-center gap-4">
             <h1 className="text-5xl gradient-title">Dashboard</h1>
-            <Button asChild>
+            <GlowingButton asChild>
               <Link href="/expenses/new">
                 <PlusCircle className="mr-2 h-4 w-4" />
                 Add expense
               </Link>
-            </Button>
+            </GlowingButton>
           </div>
 
           {/* Balance overview cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   Total Balance
@@ -87,9 +89,9 @@ export default function Dashboard() {
                       : "All settled up!"}
                 </p>
               </CardContent>
-            </Card>
+            </GlowingCard>
 
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   You are owed
@@ -103,9 +105,9 @@ export default function Dashboard() {
                   From {balances?.oweDetails?.youAreOwedBy?.length || 0} people
                 </p>
               </CardContent>
-            </Card>
+            </GlowingCard>
 
-            <Card>
+            <GlowingCard>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   You owe
@@ -130,7 +132,7 @@ export default function Dashboard() {
                   </>
                 )}
               </CardContent>
-            </Card>
+            </GlowingCard>
           </div>
 
           {/* Main dashboard content */}
@@ -147,7 +149,7 @@ export default function Dashboard() {
             {/* Right column */}
             <div className="space-y-6">
               {/* Balance details */}
-              <Card>
+              <GlowingCard>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <CardTitle>Balance Details</CardTitle>
@@ -162,10 +164,10 @@ export default function Dashboard() {
                 <CardContent>
                   <BalanceSummary balances={balances} />
                 </CardContent>
-              </Card>
+              </GlowingCard>
 
               {/* Groups */}
-              <Card>
+              <GlowingCard>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <CardTitle>Your Groups</CardTitle>
@@ -181,14 +183,14 @@ export default function Dashboard() {
                   <GroupList groups={groups} />
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" asChild className="w-full">
+                  <GlowingButton variant="outline" asChild className="w-full">
                     <Link href="/contacts?createGroup=true">
                       <Users className="mr-2 h-4 w-4" />
                       Create new group
                     </Link>
-                  </Button>
+                  </GlowingButton>
                 </CardFooter>
-              </Card>
+              </GlowingCard>
             </div>
           </div>
         </>
