@@ -52,7 +52,7 @@ function GlowingButton({
     return (
       <Comp
         data-slot="button"
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size }), className)}
         {...props}
       />
     );
@@ -73,7 +73,7 @@ function GlowingButton({
       )}
       <Comp
         data-slot="button"
-        className={cn(buttonVariants({ variant, size, className }), "relative z-10")}
+        className={cn(buttonVariants({ variant, size }), "relative z-10", className)}
         {...props}
       />
     </div>
