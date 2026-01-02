@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/logos/logo-s.png" sizes="any" />
         <link rel="manifest" href="/manifest.json" />

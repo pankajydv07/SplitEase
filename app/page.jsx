@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import Image from "next/image";
@@ -28,24 +29,24 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row justify-center">
-            <Button
+            <GlowingButton
               asChild
               size="lg"
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600"
             >
               <Link href="/dashboard">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button
+            </GlowingButton>
+            <GlowingButton
               asChild
               variant="outline"
               size="lg"
-              className="border-green-600 text-green-600 hover:bg-green-50"
+              className="border-green-600 text-green-600 dark:text-green-400 dark:border-green-500 hover:bg-green-50 dark:hover:bg-green-950"
             >
               <Link href="#how-it-works">See How It Works</Link>
-            </Button>
+            </GlowingButton>
           </div>
         </div>
 

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
 import { PlusCircle, Users, CreditCard, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { ExpenseSummary } from "./components/expense-summary";
@@ -50,12 +51,12 @@ export default function Dashboard() {
         <>
           <div className="flex  justify-between flex-col sm:flex-row sm:items-center gap-4">
             <h1 className="text-5xl gradient-title">Dashboard</h1>
-            <Button asChild>
+            <GlowingButton asChild>
               <Link href="/expenses/new">
                 <PlusCircle className="mr-2 h-4 w-4" />
                 Add expense
               </Link>
-            </Button>
+            </GlowingButton>
           </div>
 
           {/* Balance overview cards */}
@@ -182,12 +183,12 @@ export default function Dashboard() {
                   <GroupList groups={groups} />
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" asChild className="w-full">
+                  <GlowingButton variant="outline" asChild className="w-full">
                     <Link href="/contacts?createGroup=true">
                       <Users className="mr-2 h-4 w-4" />
                       Create new group
                     </Link>
-                  </Button>
+                  </GlowingButton>
                 </CardFooter>
               </GlowingCard>
             </div>
